@@ -1,2 +1,2 @@
-# web-dev-coding
-web dev coding
+# HTML AND CSS
+LEARNING AND PRACTICING WEB DEVELOPMENT ON VSCODE
