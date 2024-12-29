@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MAIN WEB</title>
+        <meta name="Hammad" content="welcome to main web code">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="mainwebstyle.css">
+    </head>
+    <body>
+        <p style="font-size: 25px;margin-top: 0px;">welcome to <b style="font-size: 40px;text-decoration: underline;">Main Web</b></p>
+        <nav>
+            <a href="login page.html">Login</a>
+            <a href="create account page.html">create account</a>
+            <input id="search_bar" type="text" placeholder="🔍 Search..." name="search" required>
+            <button id="search_button">Go</button>
+        </nav>
+        <br><br>
+        <h1>Hitlers Domain</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d621634.9705814774!2d13.3511868!3d52.5106046!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1735432790330!5m2!1sen!2s" width="550" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        <br>
+        <h1>A Sad Speech Given By The One And Only Hitler</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F2R2Xeo8HX8?si=C8ZpweUj_KB5gpXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen autoplay muted></iframe>
+        <p style="margin-left: 30px;">Your Rating: <span id="rating-value">0</span></p>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+        </div>
+        <script>
+            const stars = document.querySelectorAll('.rating input');
+            const ratingValue = document.getElementById('rating-value');
+    
+            stars.forEach(star => {
+                star.addEventListener('change', () => {
+                    ratingValue.textContent = star.value; // Update displayed rating
+                });
+            });
+        </script>
+
+    </body>
+</html>

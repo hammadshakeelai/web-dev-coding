@@ -1,0 +1,87 @@
+*{
+    font-family: 'consolas',sans-serif;
+}
+body{
+    background-color: rgb(44, 44, 44);
+}
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a,#login{
+    border: 1px solid; border-radius: 5px;padding: 5px;
+}
+nav{
+    /* position: fixed; */
+}
+#search_bar{
+    background-color: rgb(41, 41, 41);
+    width: 85px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+/* #search_icon{
+    /* border: 1px solid ; */
+    /* padding: 5px; */
+    /* border-radius: 5px; */
+/* } */ 
+.rating {
+    display: flex;
+    direction: row-reverse;
+    margin-left: 30px;
+    /* justify-content: center; */
+}
+.rating input {
+    display: none; /* Hide radio buttons */
+}
+.rating label {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+}
+.rating input:checked ~ label {
+    color: gold;
+}
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
+}
+/*  */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+#search_bar {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#search_bar:focus {
+    outline: none;
+    width: 300px;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#search_button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search_button:hover {
+    background-color: #0056b3;
+}
