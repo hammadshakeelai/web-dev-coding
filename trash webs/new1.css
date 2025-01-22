@@ -74,4 +74,8 @@ html{
 }
 p{
     --webkit-line-clamp: 1;
+    line-height: 20px;
+    text-indent: 30px;
+    text-shadow:5px 5px 5px  #000000;
+    /* word-spacing: 16px; */
 }
