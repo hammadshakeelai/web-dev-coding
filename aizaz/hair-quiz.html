@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zulfaan – 25-Question Hair Quiz</title>
+  <style>
+    body { margin:0; font-family:Helvetica, Arial, sans-serif; color:#333; background:#fff }
+    h1, legend { font-weight:600 }
+    p { line-height:1.6 }
+    .quiz-header { background:#7B3FE4; color:#fff; padding:20px; text-align:center }
+    .quiz-header h1 { margin:0; font-size:1.8em }
+    #back-link { color:#fff; text-decoration:none; font-size:0.9em }
+    #back-link:hover { text-decoration:underline }
+    form { max-width:720px; margin:30px auto; padding:0 15px }
+    fieldset { border:none; margin-bottom:25px }
+    legend { font-size:1.1em; margin-bottom:10px; color:#7B3FE4 }
+    label { display:block; margin:5px 0 }
+    input[type="radio"], input[type="checkbox"] { margin-right:8px; accent-color:#7B3FE4 }
+    .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px 20px }
+    .submit-button {
+      background:#7B3FE4; color:#fff; font-size:1em; font-weight:bold;
+      padding:12px 24px; border:none; border-radius:5px; cursor:pointer;
+    }
+    .submit-button:hover { background:#6932c0 }
+    #result {
+      display:none; margin-top:30px; padding:20px;
+      background:#F9F5FF; border:2px solid #7B3FE4; border-radius:5px;
+    }
+    #result h3 { margin-top:0; margin-bottom:0.5em }
+  </style>
+</head>
+<body>
+  <header class="quiz-header">
+    <a href="index.html" id="back-link">&larr; Back to Home</a>
+    <h1>Zulfaan Custom Hair Quiz</h1>
+  </header>
+
+  <main>
+    <form id="quizForm" onsubmit="showResult(event)">
+      <!-- 1-24: Single-choice profile questions -->
+      <fieldset><legend>1. Hair Type</legend>
+        <label><input type="radio" name="q1" value="Straight" required> Straight</label>
+        <label><input type="radio" name="q1" value="Wavy"> Wavy</label>
+        <label><input type="radio" name="q1" value="Curly"> Curly</label>
+        <label><input type="radio" name="q1" value="Coily"> Coily</label>
+      </fieldset>
+
+      <fieldset><legend>2. Hair Structure</legend>
+        <label><input type="radio" name="q2" value="Fine" required> Fine</label>
+        <label><input type="radio" name="q2" value="Medium"> Medium</label>
+        <label><input type="radio" name="q2" value="Coarse"> Coarse</label>
+      </fieldset>
+
+      <fieldset><legend>3. Scalp Moisture</legend>
+        <label><input type="radio" name="q3" value="Dry" required> Dry</label>
+        <label><input type="radio" name="q3" value="Balanced"> Balanced</label>
+        <label><input type="radio" name="q3" value="Oily"> Oily</label>
+      </fieldset>
+
+      <fieldset><legend>4. Hair Porosity</legend>
+        <label><input type="radio" name="q4" value="Low Porosity" required> Low</label>
+        <label><input type="radio" name="q4" value="Medium Porosity"> Medium</label>
+        <label><input type="radio" name="q4" value="High Porosity"> High</label>
+      </fieldset>
+
+      <fieldset><legend>5. Hair Density</legend>
+        <label><input type="radio" name="q5" value="Thin" required> Thin</label>
+        <label><input type="radio" name="q5" value="Normal"> Normal</label>
+        <label><input type="radio" name="q5" value="Thick"> Thick</label>
+      </fieldset>
+
+      <fieldset><legend>6. Chemical Treatments</legend>
+        <label><input type="radio" name="q6" value="None" required> None</label>
+        <label><input type="radio" name="q6" value="Color-treated"> Color-treated</label>
+        <label><input type="radio" name="q6" value="Relaxer/Straightening"> Relaxer/Straightening</label>
+        <label><input type="radio" name="q6" value="Perm"> Perm</label>
+      </fieldset>
+
+      <fieldset><legend>7. Heat Styling Frequency</legend>
+        <label><input type="radio" name="q7" value="Never" required> Never</label>
+        <label><input type="radio" name="q7" value="Occasional"> Occasional</label>
+        <label><input type="radio" name="q7" value="Frequent"> Frequent</label>
+      </fieldset>
+
+      <fieldset><legend>8. Sun/UV Exposure</legend>
+        <label><input type="radio" name="q8" value="Low" required> Low</label>
+        <label><input type="radio" name="q8" value="Medium"> Medium</label>
+        <label><input type="radio" name="q8" value="High"> High</label>
+      </fieldset>
+
+      <fieldset><legend>9. Washing Frequency</legend>
+        <label><input type="radio" name="q9" value="Daily" required> Daily</label>
+        <label><input type="radio" name="q9" value="Every other day"> Every other day</label>
+        <label><input type="radio" name="q9" value="2-3 times/week"> 2-3×/week</label>
+        <label><input type="radio" name="q9" value="Weekly or less"> Weekly or less</label>
+      </fieldset>
+
+      <fieldset><legend>10. Water Temperature Preference</legend>
+        <label><input type="radio" name="q10" value="Warm" required> Warm</label>
+        <label><input type="radio" name="q10" value="Lukewarm"> Lukewarm</label>
+        <label><input type="radio" name="q10" value="Cool"> Cool</label>
+      </fieldset>
+
+      <fieldset><legend>11. Conditioner Usage Frequency</legend>
+        <label><input type="radio" name="q11" value="Every wash" required> Every wash</label>
+        <label><input type="radio" name="q11" value="Sometimes"> Sometimes</label>
+        <label><input type="radio" name="q11" value="Rarely"> Rarely</label>
+        <label><input type="radio" name="q11" value="Never"> Never</label>
+      </fieldset>
+
+      <fieldset><legend>12. Clarifying Shampoo Usage</legend>
+        <label><input type="radio" name="q12" value="Weekly" required> Weekly</label>
+        <label><input type="radio" name="q12" value="Monthly"> Monthly</label>
+        <label><input type="radio" name="q12" value="Rarely"> Rarely</label>
+        <label><input type="radio" name="q12" value="Never"> Never</label>
+      </fieldset>
+
+      <fieldset><legend>13. Scalp Sensitivity</legend>
+        <label><input type="radio" name="q13" value="Yes, sensitive" required> Yes</label>
+        <label><input type="radio" name="q13" value="No"> No</label>
+      </fieldset>
+
+      <fieldset><legend>14. Hair Fall</legend>
+        <label><input type="radio" name="q14" value="Low" required> Low</label>
+        <label><input type="radio" name="q14" value="Moderate"> Moderate</label>
+        <label><input type="radio" name="q14" value="High"> High</label>
+      </fieldset>
+
+      <fieldset><legend>15. Dandruff</legend>
+        <label><input type="radio" name="q15" value="None" required> None</label>
+        <label><input type="radio" name="q15" value="Mild"> Mild</label>
+        <label><input type="radio" name="q15" value="Severe"> Severe</label>
+      </fieldset>
+
+      <fieldset><legend>16. Split Ends</legend>
+        <label><input type="radio" name="q16" value="None" required> None</label>
+        <label><input type="radio" name="q16" value="Some"> Some</label>
+        <label><input type="radio" name="q16" value="Lots"> Lots</label>
+      </fieldset>
+
+      <fieldset><legend>17. Color Treatment Frequency</legend>
+        <label><input type="radio" name="q17" value="Never" required> Never</label>
+        <label><input type="radio" name="q17" value="Once/year"> Once/year</label>
+        <label><input type="radio" name="q17" value="Every 3–6 months"> Every 3–6 months</label>
+        <label><input type="radio" name="q17" value="Monthly"> Monthly</label>
+      </fieldset>
+
+      <fieldset><legend>18. Hair Trim Frequency</legend>
+        <label><input type="radio" name="q18" value="Every 4–6 weeks" required> Every 4–6 weeks</label>
+        <label><input type="radio" name="q18" value="Every 2–3 months"> Every 2–3 months</label>
+        <label><input type="radio" name="q18" value="Less often"> Less often</label>
+      </fieldset>
+
+      <fieldset><legend>19. Swimming Frequency</legend>
+        <label><input type="radio" name="q19" value="Weekly" required> Weekly</label>
+        <label><input type="radio" name="q19" value="Monthly"> Monthly</label>
+        <label><input type="radio" name="q19" value="Rarely"> Rarely</label>
+        <label><input type="radio" name="q19" value="Never"> Never</label>
+      </fieldset>
+
+      <fieldset><legend>20. Pollution Exposure</legend>
+        <label><input type="radio" name="q20" value="Low" required> Low</label>
+        <label><input type="radio" name="q20" value="Medium"> Medium</label>
+        <label><input type="radio" name="q20" value="High"> High</label>
+      </fieldset>
+
+      <fieldset><legend>21. Smoking</legend>
+        <label><input type="radio" name="q21" value="Yes" required> Yes</label>
+        <label><input type="radio" name="q21" value="No"> No</label>
+      </fieldset>
+
+      <fieldset><legend>22. Stress Level</legend>
+        <label><input type="radio" name="q22" value="Low" required> Low</label>
+        <label><input type="radio" name="q22" value="Moderate"> Moderate</label>
+        <label><input type="radio" name="q22" value="High"> High</label>
+      </fieldset>
+
+      <fieldset><legend>23. Diet Quality</legend>
+        <label><input type="radio" name="q23" value="Balanced" required> Balanced</label>
+        <label><input type="radio" name="q23" value="High Sugar/Fat"> High sugar/fat</label>
+        <label><input type="radio" name="q23" value="Low Protein"> Low protein</label>
+      </fieldset>
+
+      <fieldset><legend>24. Sleep Quality</legend>
+        <label><input type="radio" name="q24" value="Restful" required> Restful</label>
+        <label><input type="radio" name="q24" value="Interrupted"> Interrupted</label>
+        <label><input type="radio" name="q24" value="Insufficient"> Insufficient</label>
+      </fieldset>
+
+      <!-- 25: Hair Goals (choose up to 5) -->
+      <fieldset>
+        <legend>25. Hair Goals <small>(choose up to 5)</small></legend>
+        <div class="grid-2">
+          <label><input type="checkbox" name="goal" value="Strengthen"> Strengthen</label>
+          <label><input type="checkbox" name="goal" value="Anti-Frizz"> Anti-Frizz</label>
+          <label><input type="checkbox" name="goal" value="Curl Definition"> Curl Definition</label>
+          <label><input type="checkbox" name="goal" value="Deep Condition"> Deep Condition</label>
+          <label><input type="checkbox" name="goal" value="Repair Split Ends"> Repair Split Ends</label>
+          <label><input type="checkbox" name="goal" value="Hydrate"> Hydrate</label>
+          <label><input type="checkbox" name="goal" value="Volumize"> Volumize</label>
+          <label><input type="checkbox" name="goal" value="Shine"> Shine</label>
+          <label><input type="checkbox" name="goal" value="Color Protection"> Color Protection</label>
+          <label><input type="checkbox" name="goal" value="Scalp Care"> Scalp Care</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="submit-button">See My Zulfaan Recommendation</button>
+      <div id="result"></div>
+    </form>
+  </main>
+
+  <script>
+    function showResult(e) {
+      e.preventDefault();
+      // collect all selected radio answers
+      const radios = Array.from(document.querySelectorAll('input[type=radio]:checked'))
+        .map(el => el.value);
+      // collect goals
+      const goals = Array.from(document.querySelectorAll('input[name=goal]:checked'))
+        .map(el => el.value);
+      if (goals.length === 0) return alert('Please select at least one hair goal.');
+      if (goals.length > 5) return alert('Please choose up to 5 hair goals.');
+
+      // build profile text
+      const profileText = '• Profile answers: ' + radios.join(', ') + '.';
+      const goalsText = goals.length === 1
+        ? goals[0]
+        : goals.slice(0,-1).join(', ') + ' and ' + goals.slice(-1);
+      const goalsLine = '• Goals: ' + goalsText + '.';
+
+      // final recommendation
+      const recommendation = 
+        'We recommend **Zulfaan – Naturally Nourishing Shampoo**, custom-made to match your profile and goals for radiant, healthy hair!';
+
+      // display
+      const r = document.getElementById('result');
+      r.innerHTML = `<h3>Your Zulfaan Recommendation</h3>
+                     <p>${profileText}<br>${goalsLine}<br><br>${recommendation}</p>`;
+      r.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
